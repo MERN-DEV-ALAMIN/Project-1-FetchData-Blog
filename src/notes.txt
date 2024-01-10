@@ -1,0 +1,54 @@
+Tutorial react router
+npm install react-router-dom
+npm run dev
+
+Migrating to RouterProvider
+App.jsx
+import {
+  BrowserRouter,
+  Link,
+  Route,
+  Routes,
+} from "react-router-dom";
+
+swiper, react-slick
+
+  npm i swiper
+  slider page made
+
+import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'; 
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';       1
+import 'swiper/css';                                        2
+import 'swiper/css/navigation';                    3
+import 'swiper/css/pagination';                     4
+import slider1 from "../assets/slide-1.jpg"
+import slider2 from "../assets/slide-2.jpg"
+import slider3 from "../assets/slide-3.jpg"
+import slider4 from "../assets/slide-4.jpg"
+
+const Slider = () => {
+  return (
+    <div>                                                                                                               5                                                                                       6                                                                                   7
+    <Swiper className='m-5 mySwiper'  autoplay={{delay:2500, disableOnInteraction:false,}} navigation = {true}  pagination ={true} modules={[Navigation,Pagination, Autoplay]}
+      spaceBetween={50}
+      slidesPerView={3}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      <SwiperSlide><img src={slider1}/></SwiperSlide>
+      <SwiperSlide><img src={slider2}/></SwiperSlide>
+      <SwiperSlide><img src={slider3}/></SwiperSlide>
+      <SwiperSlide><img src={slider4}/></SwiperSlide>
+      <SwiperSlide><img src={slider1}/></SwiperSlide>
+      <SwiperSlide><img src={slider2}/></SwiperSlide>
+      <SwiperSlide><img src={slider3}/></SwiperSlide>
+      <SwiperSlide><img src={slider4}/></SwiperSlide>
+
+    </Swiper>
+    
+    </div>
+  )
+}
+
+export default Slider
